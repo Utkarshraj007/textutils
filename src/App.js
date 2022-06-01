@@ -3,10 +3,11 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 function App() {
   const [alert, setAlert] = useState(null);
+
     const showAlert = (message,type) =>{
       setAlert({
         msg:message,
@@ -16,7 +17,9 @@ function App() {
           setAlert(null);
       },1000);
     }
+
   const [mode, setMode] = useState("light");
+
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
@@ -28,6 +31,7 @@ function App() {
       showAlert("Light mode has been enabled","dark");
     }
   };
+  
   return (
     <div className="App">
       <Router>
